@@ -26,6 +26,22 @@
             <h1>SynapScan_classification_Of_OvarianCancer_Variants</h1>
             <p>A Smart Approach to Ovarian Variant Diagnosis using AI</p>
         </div>
+
+        <!-- File Upload Form -->
+        <form action="/predict" method="POST" enctype="multipart/form-data" style="text-align: center; margin-top: 20px;">
+            <input type="file" name="image" accept="image/*" required>
+            <br><br>
+            <button type="submit" class="get-started-btn">Predict</button>
+        </form>
+
+        <!--Prediction Result Display -->
+        {% if prediction %}
+        <div style="margin-top: 30px; text-align: center;">
+            <h3>Prediction Result</h3>
+            <p style="color: green; font-size: 18px;">{{ prediction|safe }}</p>
+        </div>
+        {% endif %}
+
     </main>
 </body>
 </html>
